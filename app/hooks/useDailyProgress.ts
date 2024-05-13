@@ -10,17 +10,15 @@ export default function useDailyProgress() {
   });
   interface last7daysType {
     date: string;
-    totalGoals: number;
-    completedGoals: number;
+    progress: number;
   }
   const last7daysGoals: last7daysType[] = last7days.map((day) => {
     const goalsOfDay = goals.filter((goal) => goal.createdAt === day);
     const trackedGoals = goalsOfDay.filter((goal) => goal.isTracked);
     const completedGoals = trackedGoals.filter((goal) => goal.isComplete);
     return {
-      date: day,
-      totalGoals: goalsOfDay.length,
-      completedGoals: completedGoals.length,
+      date: day.slice(day.indexOf("-") + 1),
+      progress: (completedGoals.length / trackedGoals.length || 0) * 100,
     };
   });
 

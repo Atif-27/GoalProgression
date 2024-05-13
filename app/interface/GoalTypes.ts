@@ -17,5 +17,5 @@ export type GoalAction =
   | { type: "ADD_GOAL"; goal: Goal }
   | { type: "DELETE_GOAL"; id: number }
   | { type: "TOGGLE_TRACK_GOAL"; id: number }
-  | { type: "MARK_COMPLETE"; id: number }
+  | { type: "TOGGLE_COMPLETE"; id: number }
   | { type: "TRACK_ALL_GOAL" };
