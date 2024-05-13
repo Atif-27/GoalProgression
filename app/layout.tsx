@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import GoalProvider from "./context/GoalContext";
+import { NextUIProvider } from "@nextui-org/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <GoalProvider>{children}</GoalProvider>
+        <NextUIProvider>
+          <GoalProvider>{children}</GoalProvider>
+        </NextUIProvider>
       </body>
     </html>
   );
