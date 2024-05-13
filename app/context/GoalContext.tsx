@@ -52,11 +52,13 @@ const goalReducer = (state: GoalState, action: GoalAction): GoalState => {
           goal.id === action.id ? { ...goal, isTracked: !goal.isTracked } : goal
         ),
       };
-    case "MARK_COMPLETE":
+    case "TOGGLE_COMPLETE":
       return {
         ...state,
         goals: state.goals.map((goal) =>
-          goal.id === action.id ? { ...goal, isComplete: true } : goal
+          goal.id === action.id
+            ? { ...goal, isComplete: !goal.isComplete }
+            : goal
         ),
       };
     case "TRACK_ALL_GOAL":

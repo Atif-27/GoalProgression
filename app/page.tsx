@@ -2,17 +2,15 @@
 import GoalList from "./components/GoalList";
 import ProgressBox from "./components/ProgressBox";
 import DragSlider from "./components/DragSlider";
-import useDailyProgress from "./hooks/useDailyProgress";
+import ProgressChart from "./components/ProgressChart";
 
 export default function Home() {
-  const { last7daysGoals } = useDailyProgress();
-  console.log(last7daysGoals);
-
   return (
-    <main>
+    <main className="p-20 max-md:p-10 max-sm:p-4 flex flex-col gap-4">
       <ProgressBox />
       <GoalList />
       <DragSlider />
+      <ProgressChart />
     </main>
   );
 }
