@@ -16,11 +16,11 @@ export default function ProgressBox() {
     message = "You are almost done!";
   }
   return (
-    <section className="  flex max-w-md w-full  items-center space-x-8 bg-gradient-to-r via-blue-400 to-blue-500 from-blue-300 w-fit py-4 md:text-xl  px-7 rounded-xl ">
+    <section className="  flex max-w-md w-full  items-center space-x-8 bg-gradient-to-r via-blue-400 to-blue-500 from-blue-300 py-4 md:text-xl  px-7 rounded-xl ">
       <div>
         <Image src={ProgressTarget} alt="Progress Box" width={80} />
       </div>
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-4 w-full">
         <p>{message}</p>
         <p>
           {completedTodaysGoals} of {todaysGoals} completed

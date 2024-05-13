@@ -19,19 +19,22 @@ const DragSlider = () => {
   };
 
   return (
-    <Slider
-      size="lg"
-      step={0.01}
-      maxValue={1}
-      minValue={0}
-      aria-label="Volume"
-      defaultValue={0.2}
-      className="max-w-md"
-      value={value}
-      color="success"
-      onChange={handleChange}
-      onChangeEnd={handleDragEnd}
-    />
+    <div className=" space-y-4 mt-4">
+      <h1 className="text-xl">Swipe to track all</h1>
+      <Slider
+        size="lg"
+        step={0.1}
+        maxValue={1}
+        minValue={0}
+        aria-label="Volume"
+        defaultValue={0.2}
+        className="max-w-md"
+        value={value}
+        color="success"
+        onChange={handleChange}
+        onChangeEnd={handleDragEnd}
+      />
+    </div>
   );
 };
 

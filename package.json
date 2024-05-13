@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@headlessui/react": "^2.0.3",
     "@headlessui/tailwindcss": "^0.2.0",
+    "@mui/material": "^5.15.17",
     "@nextui-org/react": "^2.3.6",
     "@remixicon/react": "^4.2.0",
     "@tremor/react": "^3.16.2",

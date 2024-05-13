@@ -5,7 +5,6 @@ export default function useProgress() {
   const { goals } = state;
 
   const today = new Date().toISOString().split("T")[0]; //? Todays Date
-  console.log(today);
 
   // ! Todays Goal
   const todaysGoals = goals.filter(

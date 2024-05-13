@@ -16,7 +16,10 @@ export default function GoalCard({ goal }: { goal: Goal }) {
     dispatch({ type: "TOGGLE_TRACK_GOAL", id: goal.id });
   };
   const handleCompleteGoal = () => {
-    if (!goal.isTracked) return;
+    if (!goal.isTracked) {
+      alert("Please track the goal first");
+      return;
+    }
 
     dispatch({
       type: "TOGGLE_COMPLETE",
@@ -27,11 +30,16 @@ export default function GoalCard({ goal }: { goal: Goal }) {
   return (
     <div
       className={
-        "bg-gray-500 max-w-md p-4 max-md:p-7 flex  gap-8 justify-between items-center rounded-xl " +
-        (goal.isComplete ? " bg-green-200" : "")
+        "bg-[#282828] max-w-md p-4 max-md:p-7 flex  gap-8 justify-between items-center rounded-xl " +
+        (goal.isComplete ? " line-through" : "")
       }
     >
-      <goal.icon size={30} />
+      <Icon
+        icon={goal.icon}
+        variant="light"
+        tooltip="Remove From Track"
+        size="sm"
+      />
       <h2>{goal.name}</h2>
       <div className="gap-4 flex">
         <button onClick={handleTrackGoal}>

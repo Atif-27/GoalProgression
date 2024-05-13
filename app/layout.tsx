@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import GoalProvider from "./context/GoalContext";
+import GoalProvider from "../context/GoalContext";
 import { NextUIProvider } from "@nextui-org/react";
+import BottomNav from "@/components/BottomNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
-          <GoalProvider>{children}</GoalProvider>
+          <GoalProvider>
+            <section className="relative bg-[#212121] min-h-screen">
+              <div className="p-20 max-md:p-10  max-md:pt-14 max-md:px-1 max-sm:text-md">
+                {children}
+              </div>
+              <div className="fixed bottom-0  left-0 right-0 md:hidden">
+                <BottomNav />
+              </div>
+            </section>
+          </GoalProvider>
         </NextUIProvider>
       </body>
     </html>
