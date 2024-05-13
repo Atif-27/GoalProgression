@@ -9,7 +9,7 @@ const DragSlider = () => {
   const handleChange = (newValue: number | number[]) => {
     if (value === newValue) return;
     setValue(newValue as number);
-    if (newValue === 1) {
+    if (!Array.isArray(newValue) && newValue >= 0.8) {
       dispatch({ type: "TRACK_ALL_GOAL" });
     }
   };
