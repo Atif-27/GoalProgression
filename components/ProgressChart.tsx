@@ -17,7 +17,7 @@ export default function ProgressChart() {
         showGridLines={false}
         maxValue={100}
         minValue={0}
-        valueFormatter={(value) => `${value}%`}
+        valueFormatter={(value) => `${value.toFixed(2)}%`}
         yAxisWidth={30}
       />
     </div>

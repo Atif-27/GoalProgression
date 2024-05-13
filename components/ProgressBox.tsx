@@ -28,7 +28,7 @@ export default function ProgressBox() {
 
         <ProgressBar value={progress} color="stone" className="mt-3" />
         <div className="flex justify-end items-end">
-          <span className="text-white text-sm"> {progress}%</span>
+          <span className="text-white text-sm"> {progress.toFixed(2)}%</span>
         </div>
       </div>
     </section>
