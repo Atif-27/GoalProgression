@@ -19,9 +19,9 @@ export default function BottomNav() {
     <BottomNavigation
       showLabels
       value={value}
-      className="p-4 "
+      className="p-4 z-100 "
       sx={{
-        bgcolor: "slategray",
+        bgcolor: "darkgray",
         "& .Mui-selected": {
           "& .MuiBottomNavigationAction-label": {
             fontSize: (theme) => theme.typography.caption,
@@ -29,7 +29,7 @@ export default function BottomNav() {
             lineHeight: "20px",
           },
           "& .MuiSvgIcon-root, & .MuiBottomNavigationAction-label": {
-            color: (theme) => theme.palette.primary.dark,
+            color: (theme) => theme.palette.background.paper,
           },
         },
       }}
