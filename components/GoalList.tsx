@@ -4,6 +4,9 @@ import GoalCard from "./GoalCard";
 import Image from "next/image";
 import HeartImage from "@/public/heart.png";
 import type { Color } from "@tremor/react";
+
+// @ This component is used to create a list of goals
+// @ It will return a list of goals
 export default function GoalList() {
   const { state } = useGoal();
   const { goals } = state;

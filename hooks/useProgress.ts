@@ -1,5 +1,7 @@
 import { useGoal } from "../context/GoalContext";
 
+// @ This Hook is used to get the daily progress of the user
+// @ It will return the progress of the user
 export default function useProgress() {
   const { state } = useGoal();
   const { goals } = state;

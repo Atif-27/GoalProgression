@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Slider } from "@nextui-org/react";
 import { useGoal } from "../context/GoalContext";
 
+// @ This component is used to create a slider to track all the goals
+// @ It will return a slider component
+
 const DragSlider = () => {
   const [value, setValue] = useState(0);
   const { dispatch } = useGoal();

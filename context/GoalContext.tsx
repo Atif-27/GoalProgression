@@ -1,86 +1,10 @@
 "use client";
 import React, { createContext, useReducer } from "react";
 import { GoalState, GoalAction } from "../interface/GoalTypes";
-import { GiWeightLiftingUp } from "react-icons/gi";
-
-const initialState: GoalState = {
-  goals: [
-    {
-      id: 1,
-      name: "Workout for 20 mins",
-      isTracked: false,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-13",
-    },
-    {
-      id: 2,
-      name: "Read Book For 15 mins",
-      isTracked: false,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-13",
-    },
-    {
-      id: 3,
-      name: "Workout for 20 mins",
-      isTracked: false,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-13",
-    },
-    {
-      id: 4,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: true,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-12",
-    },
-    {
-      id: 5,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-12",
-    },
-    {
-      id: 6,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-12",
-    },
-    {
-      id: 7,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: true,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-10",
-    },
-    {
-      id: 8,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: true,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-07",
-    },
-    {
-      id: 9,
-      name: "Read Book For 15 mins",
-      isTracked: true,
-      isComplete: false,
-      icon: GiWeightLiftingUp,
-      createdAt: "2024-05-07",
-    },
-  ],
-};
-
+import { initialState } from "../constants/initialState";
 // ! Goal Reducer
+// @ This reducer handles all the actions related to the Goal Context
+// @ It takes the current state and the action to be performed and returns the new state
 const goalReducer = (state: GoalState, action: GoalAction): GoalState => {
   switch (action.type) {
     case "ADD_GOAL":
@@ -119,12 +43,17 @@ const goalReducer = (state: GoalState, action: GoalAction): GoalState => {
   }
 };
 
+// @ Goal Context
+// @ This context is used to manage the state of the Goals
+// @ It contains the state and dispatch function to update the state
 export const GoalContext = createContext<{
   state: GoalState;
   dispatch: React.Dispatch<GoalAction>;
 }>({ state: initialState, dispatch: () => null });
 
 // ! Goal Provider Component
+// @ This component is used to provide the Goal Context to the whole application
+// @ It takes the children as props and returns the Goal Context Provider
 export default function GoalProvider({
   children,
 }: {
@@ -140,6 +69,8 @@ export default function GoalProvider({
 }
 
 // ! Custom Hook to use Goal Context
+// @ This hook is used to get the state and dispatch function of the Goal Context
+// @ It will return the state and dispatch function
 export function useGoal() {
   const context = React.useContext(GoalContext);
   if (!context) {

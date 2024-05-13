@@ -3,6 +3,9 @@ import ProgressTarget from "@/public/ProgressTarget.png";
 import useProgress from "../hooks/useProgress";
 import { ProgressBar } from "@tremor/react";
 
+// @ This component is used to create the Progress Box
+// @ It will return a Progress Box component
+
 export default function ProgressBox() {
   const { progress, todaysGoals, completedTodaysGoals } = useProgress();
   let message;

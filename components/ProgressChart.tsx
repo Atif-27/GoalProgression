@@ -2,6 +2,9 @@ import { BarChart } from "@tremor/react";
 import React from "react";
 import useDailyProgress from "../hooks/useDailyProgress";
 
+// @ This component is used to create a Progress Chart
+// @ It will return a Progress Chart component
+
 export default function ProgressChart() {
   const { last7daysGoals } = useDailyProgress();
   console.log(last7daysGoals);

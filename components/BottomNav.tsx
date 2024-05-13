@@ -7,6 +7,9 @@ import { FaFire } from "react-icons/fa";
 import { MdStackedLineChart } from "react-icons/md";
 import { TbPlugConnected } from "react-icons/tb";
 
+// @ This component is used to render the Bottom Navigation Bar
+// @ It contains the icons for the Bottom Navigation Bar
+
 export default function BottomNav() {
   const location = usePathname();
   const router = useRouter();

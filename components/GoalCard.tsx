@@ -7,6 +7,8 @@ import { ImCross } from "react-icons/im";
 import { Icon } from "@tremor/react";
 import type { Color } from "@tremor/react";
 
+// @ This component is used to create a Goal Card
+
 export default function GoalCard({
   goal,
   color,
