@@ -19,7 +19,20 @@ export default function BottomNav() {
     <BottomNavigation
       showLabels
       value={value}
-      className="p-4 bg-slate-700  text-white"
+      className="p-4 "
+      sx={{
+        bgcolor: "slategray",
+        "& .Mui-selected": {
+          "& .MuiBottomNavigationAction-label": {
+            fontSize: (theme) => theme.typography.caption,
+            fontWeight: "bold",
+            lineHeight: "20px",
+          },
+          "& .MuiSvgIcon-root, & .MuiBottomNavigationAction-label": {
+            color: (theme) => theme.palette.primary.dark,
+          },
+        },
+      }}
       onChange={(event, newValue) => {
         if (newValue === 0) router.push("/");
         if (newValue === 1) router.push("/customise");

@@ -5,7 +5,15 @@ import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { Icon } from "@tremor/react";
-export default function GoalCard({ goal }: { goal: Goal }) {
+import type { Color } from "@tremor/react";
+
+export default function GoalCard({
+  goal,
+  color,
+}: {
+  goal: Goal;
+  color: Color;
+}) {
   const { dispatch } = useGoal();
   const handleTrackGoal = () => {
     if (goal.isComplete)
@@ -36,9 +44,10 @@ export default function GoalCard({ goal }: { goal: Goal }) {
     >
       <Icon
         icon={goal.icon}
-        variant="light"
         tooltip="Remove From Track"
         size="sm"
+        color={color}
+        variant="light"
       />
       <h2>{goal.name}</h2>
       <div className="gap-4 flex">
@@ -47,12 +56,14 @@ export default function GoalCard({ goal }: { goal: Goal }) {
             <Icon
               icon={IoIosAddCircle}
               variant="light"
+              color={color}
               tooltip="Add To Track"
               size="sm"
             />
           ) : (
             <Icon
               icon={IoIosRemoveCircle}
+              color={color}
               variant="light"
               tooltip="Remove From Track"
               size="sm"
@@ -63,6 +74,7 @@ export default function GoalCard({ goal }: { goal: Goal }) {
           {goal.isComplete ? (
             <Icon
               icon={ImCross}
+              color={color}
               variant="light"
               tooltip="Mark Goal Incomplete"
               size="sm"
@@ -71,6 +83,7 @@ export default function GoalCard({ goal }: { goal: Goal }) {
             <Icon
               icon={FaCheck}
               variant="light"
+              color={color}
               tooltip="Mark Goal Complete"
               size="sm"
             />

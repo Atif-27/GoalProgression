@@ -18,6 +18,7 @@ export default function ProgressChart() {
         maxValue={100}
         minValue={0}
         valueFormatter={(value) => `${value}%`}
+        yAxisWidth={30}
       />
     </div>
   );

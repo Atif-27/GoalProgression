@@ -23,14 +23,14 @@ const DragSlider = () => {
       <h1 className="text-xl">Swipe to track all</h1>
       <Slider
         size="lg"
-        step={0.1}
+        step={0.01}
         maxValue={1}
         minValue={0}
         aria-label="Volume"
         defaultValue={0.2}
         className="max-w-md"
         value={value}
-        color="success"
+        color="danger"
         onChange={handleChange}
         onChangeEnd={handleDragEnd}
       />
