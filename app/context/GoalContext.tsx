@@ -1,28 +1,35 @@
 "use client";
 import React, { createContext, useReducer } from "react";
-
-type Goal = {
-  id: number;
-  name: string;
-  isTracked: boolean;
-  isComplete: boolean;
-  dateCompleted?: string;
-};
-
-type GoalState = {
-  goals: Goal[];
-  progress: number;
-};
-
-type GoalAction =
-  | { type: "ADD_GOAL"; goal: Goal }
-  | { type: "DELETE_GOAL"; id: number }
-  | { type: "TOGGLE_TRACK_GOAL"; id: number }
-  | { type: "MARK_COMPLETE"; id: number; dateCompleted: string };
+import { GoalState, GoalAction } from "../interface/GoalTypes";
+import { GiWeightLiftingUp } from "react-icons/gi";
 
 const initialState: GoalState = {
-  goals: [],
-  progress: 0,
+  goals: [
+    {
+      id: 1,
+      name: "Workout for 20 mins",
+      isTracked: false,
+      isComplete: false,
+      icon: GiWeightLiftingUp,
+      createdAt: "2024-05-13",
+    },
+    {
+      id: 2,
+      name: "Workout for 20 mins",
+      isTracked: false,
+      isComplete: false,
+      icon: GiWeightLiftingUp,
+      createdAt: "2024-05-13",
+    },
+    {
+      id: 3,
+      name: "Workout for 20 mins",
+      isTracked: false,
+      isComplete: false,
+      icon: GiWeightLiftingUp,
+      createdAt: "2024-05-13",
+    },
+  ],
 };
 
 // ! Goal Reducer
@@ -49,10 +56,13 @@ const goalReducer = (state: GoalState, action: GoalAction): GoalState => {
       return {
         ...state,
         goals: state.goals.map((goal) =>
-          goal.id === action.id
-            ? { ...goal, isComplete: true, dateCompleted: action.dateCompleted }
-            : goal
+          goal.id === action.id ? { ...goal, isComplete: true } : goal
         ),
+      };
+    case "TRACK_ALL_GOAL":
+      return {
+        ...state,
+        goals: state.goals.map((goal) => ({ ...goal, isTracked: true })),
       };
     default:
       return state;
