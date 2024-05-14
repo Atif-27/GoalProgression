@@ -12,7 +12,7 @@ export const initialState: GoalState = {
       isTracked: false,
       isComplete: false,
       icon: GiWeightLiftingUp,
-      createdAt: "2024-05-13",
+      createdAt: new Date().toISOString().split("T")[0],
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ export const initialState: GoalState = {
       isTracked: false,
       isComplete: false,
       icon: FaFire,
-      createdAt: "2024-05-13",
+      createdAt: new Date().toISOString().split("T")[0],
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export const initialState: GoalState = {
       isTracked: false,
       isComplete: false,
       icon: GiWeightLiftingUp,
-      createdAt: "2024-05-13",
+      createdAt: new Date().toISOString().split("T")[0],
     },
     {
       id: 4,
